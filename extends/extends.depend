@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1417698081 source:c:\users\ibm_admin\documents\c++workspace\extends\main.cpp
+	<iostream>
+	<Date.h>
+
+1417697362 c:\users\ibm_admin\documents\c++workspace\extends\include\date.h
+	<iostream>
+
+1417697214 source:c:\users\ibm_admin\documents\c++workspace\extends\src\date.cpp
+	<iostream>
+	"Date.h"
+
+1417697932 source:c:\users\ibm_admin\documents\c++workspace\extends\src\eye.cpp
+	"Eye.h"
+
+1417697922 c:\users\ibm_admin\documents\c++workspace\extends\include\eye.h
+	<iostream>
+
+1417698040 source:c:\users\ibm_admin\documents\c++workspace\extends\src\nose.cpp
+	"Nose.h"
+
+1417698128 c:\users\ibm_admin\documents\c++workspace\extends\include\nose.h
+	"iostream"
+
