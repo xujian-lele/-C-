@@ -22,3 +22,45 @@
 1417698128 c:\users\ibm_admin\documents\c++workspace\extends\include\nose.h
 	"iostream"
 
+1417697214 source:c:\users\ibm_admin\documents\github\-c-\extends\src\date.cpp
+	<iostream>
+	"Date.h"
+
+1417697362 c:\users\ibm_admin\documents\github\-c-\extends\include\date.h
+	<iostream>
+
+1417697932 source:c:\users\ibm_admin\documents\github\-c-\extends\src\eye.cpp
+	"Eye.h"
+
+1417697922 c:\users\ibm_admin\documents\github\-c-\extends\include\eye.h
+	<iostream>
+
+1417698291 source:c:\users\ibm_admin\documents\github\-c-\extends\src\head.cpp
+	"Head.h"
+
+1417698358 c:\users\ibm_admin\documents\github\-c-\extends\include\head.h
+	"Eye.h"
+	"Nose.h"
+
+1417698128 c:\users\ibm_admin\documents\github\-c-\extends\include\nose.h
+	"iostream"
+
+1417698040 source:c:\users\ibm_admin\documents\github\-c-\extends\src\nose.cpp
+	"Nose.h"
+
+1417701365 source:c:\users\ibm_admin\documents\github\-c-\extends\main.cpp
+	<iostream>
+	<Head.h>
+	"Date.h"
+
+1417699771 source:c:\users\ibm_admin\documents\github\-c-\extends\src\human.cpp
+	"Human.h"
+
+1417699770 c:\users\ibm_admin\documents\github\-c-\extends\include\human.h
+
+1417699707 source:c:\users\ibm_admin\documents\github\-c-\extends\src\man.cpp
+	"Man.h"
+
+1417701481 c:\users\ibm_admin\documents\github\-c-\extends\include\man.h
+	"Human.h"
+
