@@ -1,6 +1,9 @@
+#define NDEBUG
 #include <iostream>
 #include <Head.h>
 #include "Date.h"
+#include "assert.h"
+
 
 
 using namespace std;
@@ -29,6 +32,7 @@ public:
 
 void Test(A *a)
 {
+    assert(a == NULL);
     a->fun();
 }
 
