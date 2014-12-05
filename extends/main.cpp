@@ -27,7 +27,6 @@ public:
     }
 };
 
-
 void Test(A *a)
 {
     assert(a == NULL);
@@ -36,6 +35,7 @@ void Test(A *a)
 
 class a{
 public:
+    a(){};
     a(int n){
         this->value = n;
     }
@@ -55,7 +55,11 @@ int main()
     assert(delete(date));
 
     a *p = new a(30);
+    cout << p->value << endl;
     assert(delete(p));
+
+    a M;
+    cout << M.value << endl;
 
     B b;
     C c;
