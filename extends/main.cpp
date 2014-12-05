@@ -3,7 +3,6 @@
 #include <Head.h>
 #include "Date.h"
 #include "assert.h"
-#include "stdio.h"
 
 using namespace std;
 
@@ -71,12 +70,30 @@ void swap3(int &x, int &y)
 
 int main()
 {
-    int v1,v2;
-    v1 = 6;
-    v2 = 8;
-    //swap1(v1,v2);
+
+    int a = 6;
+    int* v1 = &a;
+    int b = 8;
+    int *v2 = NULL;
+    v2 = &b;
+    //*v2 = 8;
+    cout << v1 << " " << v2 << endl;
+    cout << *v1 << " " << *v2 << endl;
+    //swap1(*v1, *v2);
+    //swap2(v1,v2);
     //swap2(&v1, &v2);
-    swap3(v1, v2);
-     cout << v1 <<"  "<< v2 <<endl;
+    swap3(*v1, *v2);
+    cout << v1 << " " << v2 << endl;
+    cout << *v1 << " " << *v2 << endl;
+    int bb = 0123;
+    cout << bb << endl;
+    int cc = 0x123;
+    cout << cc << endl;
+    int dd = 123;
+    cout << dd << endl;
+    string input;
+    getline(cin,input);
+    cout << "U had input:" << endl;
+    cout << input << endl;
     return 0;
 }
