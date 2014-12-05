@@ -3,6 +3,7 @@
 #include <Head.h>
 #include "Date.h"
 #include "assert.h"
+#include "stdio.h"
 
 using namespace std;
 
@@ -41,29 +42,41 @@ public:
     }
     int value;
 };
+//值传递
+void swap1(int x, int y){
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+    cout << x <<"  "<< y <<endl;
+}
+//地址传递
+void swap2(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+    cout << *x <<"  "<< *y <<endl;
+}
+//引用传递
+void swap3(int &x, int &y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+    cout << x << "  " << y << endl;
+}
 
 int main()
 {
-    int *temp = new int;
-    *temp = 10;
-    assert(delete(temp));
-
-    int *array = new int[10];
-    assert(delete[](array));
-
-    Date *date = new Date();
-    assert(delete(date));
-
-    a *p = new a(30);
-    cout << p->value << endl;
-    assert(delete(p));
-
-    a M;
-    cout << M.value << endl;
-
-    B b;
-    C c;
-    Test(&b);
-    Test(&c);
+    int v1,v2;
+    v1 = 6;
+    v2 = 8;
+    //swap1(v1,v2);
+    //swap2(&v1, &v2);
+    swap3(v1, v2);
+     cout << v1 <<"  "<< v2 <<endl;
     return 0;
 }
