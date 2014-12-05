@@ -4,8 +4,6 @@
 #include "Date.h"
 #include "assert.h"
 
-
-
 using namespace std;
 
 class A{
@@ -36,8 +34,29 @@ void Test(A *a)
     a->fun();
 }
 
+class a{
+public:
+    a(int n){
+        this->value = n;
+    }
+    int value;
+};
+
 int main()
 {
+    int *temp = new int;
+    *temp = 10;
+    assert(delete(temp));
+
+    int *array = new int[10];
+    assert(delete[](array));
+
+    Date *date = new Date();
+    assert(delete(date));
+
+    a *p = new a(30);
+    assert(delete(p));
+
     B b;
     C c;
     Test(&b);
