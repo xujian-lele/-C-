@@ -51,11 +51,27 @@ int f(int x = 42);
 int f(int x)
 {
     cout << "The inputed num is:" << x << endl;
+    return x;
 }
+int g(int& a)
+{
+    cout << "The num is:" << a << endl;
+    return a;
+}
+int m(const int& a)
+{
+    cout << "The num is:" << a << endl;
+    a = 10; // if the object is const type,then the object can not be changed
+    return a;
+}
+
+
+
 
 int main()
 {
-    f();
-    f(28);
+    int a = 10;
+    g(a);
+    f(a);
     return 0;
 }
