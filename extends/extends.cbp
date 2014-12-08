@@ -37,11 +37,15 @@
 		<Unit filename="include/Date.h" />
 		<Unit filename="include/Eye.h" />
 		<Unit filename="include/Head.h" />
+		<Unit filename="include/Human.h" />
+		<Unit filename="include/Man.h" />
 		<Unit filename="include/Nose.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Date.cpp" />
 		<Unit filename="src/Eye.cpp" />
 		<Unit filename="src/Head.cpp" />
+		<Unit filename="src/Human.cpp" />
+		<Unit filename="src/Man.cpp" />
 		<Unit filename="src/Nose.cpp" />
 		<Extensions>
 			<code_completion />
