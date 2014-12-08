@@ -46,32 +46,17 @@ private:
     }
 
 };
-
-int f(int x = 42);
-int f(int x)
+void f(int x)
 {
-    cout << "The inputed num is:" << x << endl;
-    return x;
+    //the value is passed by value
+    x = 100;
+    cout << "The inputed num of inner function is:" << x << endl;
 }
-int g(int& a)
-{
-    cout << "The num is:" << a << endl;
-    return a;
-}
-int m(const int& a)
-{
-    cout << "The num is:" << a << endl;
-    a = 10; // if the object is const type,then the object can not be changed
-    return a;
-}
-
-
-
 
 int main()
 {
     int a = 10;
-    g(a);
     f(a);
+    cout << "The inputed num of outer function f is:" << a << endl;
     return 0;
 }
