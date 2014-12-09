@@ -2,6 +2,8 @@
 #include "iostream"
 #define PTHRED_NUM 5
 using namespace std;
+int sum;
+pthread_mutex_t sum_mutex;
 class A
 {
     public:
@@ -9,8 +11,12 @@ class A
     {
         int i = *((int *)args);
         cout << "Hello..i am:" << i << endl;
-        void* status = (void*)(i + 10);
-        pthread_exit(status);
+        pthread_mutex_lock(&sum_mutex);
+        cout << "before + sum is: " << sum <<"in thread" << i << endl;
+        sum += i;
+        cout << "after + sum is: " << sum <<"in thread" << i << endl;
+        pthread_mutex_unlock(&sum_mutex);
+        pthread_exit(0);
     }
 };
 int main()
@@ -20,6 +26,7 @@ int main()
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+    pthread_mutex_init(&sum_mutex,NULL);
     for(int i=0;i<PTHRED_NUM;i++)
     {
         index[i] = i;
@@ -38,9 +45,7 @@ void* status;
         {
             cout << "pthread_join():failed" << tid[i] << endl;
         }
-        else
-        {
-            cout << "pthread_join():get status:" << (long)status << endl;
-        }
     }
+    pthread_mutex_destroy(&sum_mutex);
+    cout << "finally sum is: " << sum << endl;
 }
