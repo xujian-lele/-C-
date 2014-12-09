@@ -1,46 +1,66 @@
 #include<iostream>
-#include "stdio.h"
 using namespace std;
 
-class A
+class Base
 {
 public:
-    void foo()
+    virtual void f(float x)
     {
-        printf("1\n");
+        cout<<"Base::f(float)"<< x <<endl;
     }
-    virtual void fun()
+    void g(float x)
     {
-        printf("2\n");
+        cout<<"Base::g(float)"<< x <<endl;
+    }
+    void h(float x)
+    {
+        cout<<"Base::h(float)"<< x <<endl;
     }
 };
-class B : public A
+class Derived : public Base
 {
 public:
-    void foo()
+    virtual void f(float x)
     {
-        printf("3\n");
+        cout<<"Derived::f(float)"<< x <<endl;   //¶àÌ¬¡¢¸²¸Ç
     }
-    void fun()
+    void g(int x)
     {
-        printf("4\n");
+        cout<<"Derived::g(int)"<< x <<endl;     //Òþ²Ø
+    }
+    void h(float x)
+    {
+        cout<<"Derived::h(float)"<< x <<endl;   //Òþ²Ø
     }
 };
 int main(void)
 {
-    A a;
-    B b;
-    A *p = &a;
-    p->foo();
-    p->fun();
-    p = &b;
-    p->foo();
-    p->fun();
-    B *pb = &b;
-    pb->foo();
-    pb->fun();
-    B *q = (B *)&a;
-    q->foo();
-    q->fun();
+    Derived d;
+    Base *pb = &d;
+    Derived *pd = &d;
+    // Good : behavior depends solely on type of the object
+    pb->f(3.14f);   // Derived::f(float) 3.14
+    pd->f(3.14f);   // Derived::f(float) 3.14
+
+    // Bad : behavior depends on type of the pointer
+    pb->g(3.14f);   // Base::g(float)  3.14
+    pd->g(3.14f);   // Derived::g(int) 3
+
+    // Bad : behavior depends on type of the pointer
+    pb->h(3.14f);   // Base::h(float) 3.14
+    pd->h(3.14f);   // Derived::h(float) 3.14
+
+    Base e;
+    Base *p = &e;
+    Derived *q = (Derived *)&e;
+    //Good :
+    p->f(0.000001f);    //Base::f(float) 0.00000001
+    q->f(0.000001f);    //Base::f(float) 0.00000001
+
+    p->g(0.000001f);    //Base::f(float) 0.00000001
+    q->g(0.000001f);    //Derived::f(float) 0.00000001
+
+    p->h(0.000001f);    //Base::h(float) 0.000001f
+    q->h(0.000001f);    //Base::h(float) 0.000001f
     return 0;
 }
