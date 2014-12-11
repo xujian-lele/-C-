@@ -1,22 +1,45 @@
 #include "iostream"
+#include "pthread.h"
 #include "vector"
 #include "algorithm"
 
 using namespace std;
+
 int main(void)
 {
-    //STL中的vector
-    vector<int> vector_int;
-    int element;
-    while(cin >> element)
+    vector<int> vec;
+    vec.reserve(20);
+    int i = 0 ;
+    while(i <= 10)
     {
-        vector_int.push_back(element);
+        vec.push_back(i);
+        i++;
     }
-    //sort是STL中的算法
-    sort(vector_int.begin(), vector_int.end());
-    //vector能像数组那样进行访问
-    for(int i=0;i<vector_int.size();i++)
+
+    cout << "vector's size : " << vec.size() << endl;//11
+    remove(vec.begin(),vec.end(),0);
+    cout << vec.size() << endl;//11,remove前后size没变，那么remove到底是啥意思？
+
+    cout << "vector's size : " << vec.size() << endl;
+    cout << "vector's capacity : " << vec.capacity() << endl;
+    cout << "vector's max_size : " << vec.max_size() << endl;
+
+    cout << "vector's front : " << vec.front() << endl;
+    cout << "vector's back : " << vec.back() << endl;
+
+    vector<int>::iterator itr = vec.begin();
+    while(true)
     {
-        cout << vector_int[i] << endl;
+        if(*itr == 1)
+        {
+           vec.erase(itr);
+           break;
+        }
+        itr++;
     }
+
+    cout << "vector's size : " << vec.size() << endl;
+    cout << "vector's front : " << vec.front() << endl;
+    swap(vec[0],vec[1]);
+    cout << "vector's front : " << vec.front() << endl;
 }
