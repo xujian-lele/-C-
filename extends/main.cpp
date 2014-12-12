@@ -37,4 +37,7 @@ cout << lst.back() << endl;
 
 a A;
 cout << sizeof(A) << endl;
+cout << sizeof(double) << endl;
+cout << sizeof(short *) << endl;
+
 }
