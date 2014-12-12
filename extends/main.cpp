@@ -1,17 +1,18 @@
 #include "iostream"
 #include "algorithm"
+#include "vector"
 
 using namespace std;
-#define SIZE  20
+
 int main(void){
-    int array[SIZE];
-    array[1] = 10000;
-    int *p = find(array,array+SIZE,10000);
-    if(p == array+SIZE){
-        cout << "Not find" << endl;
+    vector<int> vec;
+    vec.push_back(100);
+    vector<int>::iterator itr;
+    itr = find(vec.begin(),vec.end(),1000);
+    if(itr == vec.end()){
+        cout << "not find" << endl;
     }else{
-        cout << "Has find" << endl;
+        cout << "find" << endl;
     }
-    cout << *p << endl;
     return 0;
 }
