@@ -48,10 +48,9 @@
 1417698040 source:c:\users\ibm_admin\documents\github\-c-\extends\src\nose.cpp
 	"Nose.h"
 
-1418281451 source:c:\users\ibm_admin\documents\github\-c-\extends\main.cpp
+1418288765 source:c:\users\ibm_admin\documents\github\-c-\extends\main.cpp
 	"iostream"
-	"pthread.h"
-	"vector"
+	"list"
 	"algorithm"
 
 1417699771 source:c:\users\ibm_admin\documents\github\-c-\extends\src\human.cpp
